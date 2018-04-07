@@ -1,0 +1,32 @@
+{
+  "name": "tof-backend",
+  "version": "0.0.0",
+  "description": "Basic RESTful microservice, based on Node, Restify, and MongoDB",
+  "author": "Author Name",
+  "license": "",
+  "repository": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js | ./node_modules/bunyan/bin/bunyan",
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "bunyan": "^1.x",
+    "mongoose": "^4.x",
+    "mongoose-unique-validator": "^1.x",
+    "restify": "^6.x"
+  },
+  "devDependencies": {
+    "grunt": "^1.x",
+    "grunt-exec": "^3.x",
+    "grunt-mocha-istanbul": "^5.x",
+    "grunt-mongoimport": "^0.x",
+    "istanbul": "1.1.0-alpha.1",
+    "jasmine-node": "^1.x",
+    "jshint": "^2.x",
+    "mocha": "^4.x",
+    "request": "^2.x",
+    "should": "^13.x"
+  }
+}
