@@ -17,7 +17,8 @@ let server = restify.createServer({
   log: log
 });
 
-server.use(restify.plugins.bodyParser());
+//server.use(restify.plugins.bodyParser());
+server.use(restify.plugins.multipartBodyParser());
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.gzipResponse());
 server.pre(restify.pre.sanitizePath());

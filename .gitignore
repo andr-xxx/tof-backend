@@ -4,6 +4,7 @@
 logs
 *.log
 npm-debug.log*
+!.gitkeep
 
 # Runtime data
 pids
@@ -79,6 +80,7 @@ dist/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
+.DS_Store
 
 # JIRA plugin
 atlassian-ide-plugin.xml
@@ -88,3 +90,6 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+# User Data
+user-data/**/*

@@ -1,0 +1,95 @@
+swagger: "2.0"
+info:
+  description: "Thief of faces game backend."
+  version: "1.0.0"
+  title: "Thief of faces"
+basePath: "/"
+tags:
+- name: "user"
+  description: "User management"
+schemes:
+- "http"
+paths:
+  /users:
+    get:
+      tags:
+      - "user"
+      summary: "Users list"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "success"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/User"
+    post:
+      tags:
+      - "user"
+      summary: "Create user"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "User object"
+        required: true
+        schema:
+          $ref: "#/definitions/User"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/User"
+        500:
+          description: "Some error occured"
+          schema:
+            $ref: "#/definitions/ApiError"
+    put:
+      tags:
+      - "user"
+      summary: "Update user"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "User object"
+        required: true
+        schema:
+          $ref: "#/definitions/ApiUserRequest"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/User"
+        500:
+          description: "Some error occured"
+          schema:
+            $ref: "#/definitions/ApiError"
+definitions:
+  User:
+    type: "object"
+    properties:
+      nickname:
+        type: "string"
+  ApiUserRequest:
+    type: "object"
+    properties:
+      nickname:
+        type: "string"
+      photo:
+        type: "array"
+        description: "Image files"
+        items:
+          type: string
+          format: binary
+  ApiError:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+        description: "Error code"
